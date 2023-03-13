@@ -1,4 +1,8 @@
-## usage
+## Deploy
+
+<a href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Foeyoews%2Fhtk"><img src="https://vercel.com/button" alt="Deploy with Vercel"/></a>
+
+## Usage
 
 ```html
 <p id="htk"></p>
@@ -19,3 +23,12 @@
   > http-server /tmp --cors -o
 
   - use restful
+
+## Config
+
+- 修改 api/assets/
+
+## TODO
+
+- support txt to json withc script(wip)
+- refactor format json
