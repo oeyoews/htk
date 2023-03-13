@@ -1,24 +1,13 @@
 {
-  "version": 2,
-  "builds": [
+  "rewrites": [
     {
-      "src": "index.js",
-      "use": "@vercel/node"
+      "source": "/api(.*)",
+      "destination": "/api/index.js"
     }
   ],
-  "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "index.js"
-    }
-  ],
-  "env": {
-    "API_KEY": "your-api-key"
-  },
   "functions": {
-    "hello": {
-      "handler": "api/index.js",
-      "memory": 128
+    "htk": {
+      "runtime": "@vercel/node"
     }
   }
 }
