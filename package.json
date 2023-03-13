@@ -4,6 +4,9 @@
   "main": "index.js",
   "author": "oeyoews <jyao4783@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "start": "node index.js"
+  },
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.18.2"
