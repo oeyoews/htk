@@ -4,6 +4,8 @@
 
 ## Usage
 
+- copy this snippets to your html
+
 ```html
 <p id="htk"></p>
 
