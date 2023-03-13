@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const fs = require("fs");
 
 const quotes = [
   {
@@ -16,11 +17,22 @@ const quotes = [
   },
 ];
 
+// json file
 app.get("/api", (req, res) => {
-  const randomIndex = Math.floor(Math.random() * quotes.length);
-  const quote = quotes[randomIndex];
-  res.json(quote);
+  fs.readFile("assets/quotes.json", (err, data) => {
+    if (err) {
+      console.error(err);
+      res.status(500).send("Internal Server Error");
+      return;
+    }
+    const quotes = JSON.parse(data);
+    const randomIndex = Math.floor(Math.random() * quotes.length);
+    const quote = quotes[randomIndex];
+    res.json(quote);
+  });
 });
+
+// example
 app.get("/", (req, res) => {
   const randomIndex = Math.floor(Math.random() * quotes.length);
   const quote = quotes[randomIndex];
