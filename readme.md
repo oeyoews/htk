@@ -20,11 +20,8 @@
 </script>
 ```
 
-- https://tangly1024.com/article/vercel-free-serverless-api
-
-  > http-server /tmp --cors -o
-
-  - use restful
+<!-- - https://tangly1024.com/article/vercel-free-serverless-api -->
+<!-- > http-server /tmp --cors -o -->
 
 ## Config
 
@@ -34,3 +31,4 @@
 
 - support txt to json withc script(wip)
 - refactor format json
+- use restful
