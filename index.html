@@ -13,8 +13,8 @@
       fetch("https://htk.vercel.app/api")
         .then((response) => response.json())
         .then((data) => {
-          const hitokoto = document.querySelector("#htk");
-          hitokoto.innerText = `${data.text}  ${data.author}`;
+          const htk = document.querySelector("#htk");
+          htk.textContent = `${data.text}  ${data.author}`;
         })
         .catch(console.error);
     </script>
