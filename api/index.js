@@ -18,6 +18,8 @@ const quotes = [
   },
 ];
 
+app.use(cors());
+
 // json file
 app.get("/api", (req, res) => {
   const filePath = path.join(__dirname, "assets", "quotes.json");
