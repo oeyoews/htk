@@ -1,4 +1,7 @@
 {
+  "github": {
+    "silent": true
+  },
   "builds": [
     {
       "src": "/api/index.js",
