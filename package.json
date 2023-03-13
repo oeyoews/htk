@@ -5,7 +5,7 @@
   "author": "oeyoews <jyao4783@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "node index.js",
+    "start": "node api/index.js",
     "dev": "vercel dev"
   },
   "dependencies": {
