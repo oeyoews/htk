@@ -1,0 +1,24 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "index.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "index.js"
+    }
+  ],
+  "env": {
+    "API_KEY": "your-api-key"
+  },
+  "functions": {
+    "hello": {
+      "handler": "api/index.js",
+      "memory": 128
+    }
+  }
+}
