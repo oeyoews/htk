@@ -27,11 +27,8 @@ app.get("/api/:id?", (req, res) => {
     if (req.params.id === "htk" || req.query.select === "#htk") {
       const randomIndex = Math.floor(Math.random() * quotes.length);
       quote = quotes[randomIndex];
-      const html = `<html><body><div id="htk">Hello, this is the default quote.</div></body></html>`;
-      const dom = new DOMParser().parseFromString(html, "text/html");
-      const htkElement = dom.querySelector("#htk");
-      htkElement.textContent = quote.text;
-      res.send(dom.documentElement.outerHTML);
+      const html = `<div id="htk">${quote.text}</div>`;
+      res.send(html);
     } else {
       const selectedQuote = req.query.select;
       if (selectedQuote) {
@@ -47,7 +44,7 @@ app.get("/api/:id?", (req, res) => {
   });
 });
 
-// test
+// example
 app.get("/", (req, res) => {
   const randomIndex = Math.floor(Math.random() * quotes.length);
   const quote = quotes[randomIndex];

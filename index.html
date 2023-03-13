@@ -8,11 +8,8 @@
   <body>
     <p id="htk">loading ...</p>
 
-    <script
-      src="https://htk.vercel.app/api?encode=js&select=%23htk"
-      defer
-    ></script>
-    <!-- <script>
+    <!-- <script src="https://htk.vercel.app/api/htk" defer></script> -->
+    <script>
       fetch("https://htk.vercel.app/api")
         .then((response) => response.json())
         .then((data) => {
@@ -20,6 +17,6 @@
           hitokoto.innerText = `${data.text}  ${data.author}`;
         })
         .catch(console.error);
-    </script> -->
+    </script>
   </body>
 </html>
