@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const path = require("path");
 const fs = require("fs");
 
 const quotes = [
@@ -19,7 +20,8 @@ const quotes = [
 
 // json file
 app.get("/api", (req, res) => {
-  fs.readFile("assets/quotes.json", (err, data) => {
+  const filePath = path.join(__dirname, "assets", "quotes.json");
+  fs.readFile(filePath, (err, data) => {
     if (err) {
       console.error(err);
       res.status(500).send("Internal Server Error");
