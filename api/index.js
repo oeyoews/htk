@@ -1,8 +1,9 @@
-const express = require("express");
-const cors = require("cors");
+import express from "express";
+import cors from "cors";
+import { join } from "path";
+import { readFile } from "fs";
+
 const app = express();
-const path = require("path");
-const fs = require("fs");
 
 const quotes = [
   {
@@ -15,8 +16,8 @@ app.use(cors());
 
 // json file
 app.get("/api/:id?", (req, res) => {
-  const filePath = path.join(__dirname, "assets", "quotes.json");
-  fs.readFile(filePath, (err, data) => {
+  const filePath = join(__dirname, "assets", "quotes.json");
+  readFile(filePath, (err, data) => {
     if (err) {
       console.error(err);
       res.status(500).send("Internal Server Error");
@@ -51,4 +52,4 @@ app.get("/", (req, res) => {
   res.json(quote);
 });
 
-module.exports = app;
+export default app;
