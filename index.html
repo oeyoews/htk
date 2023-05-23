@@ -4,19 +4,52 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>HTK</title>
+    <style type="text/css" media="screen">
+      .app {
+        background-color: rgb(241 245 249);
+        border-radius: 0.25rem;
+        font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+        font-size: 42px;
+        padding: 0.5rem;
+        cursor: pointer;
+        color: black;
+        padding: 1rem;
+        margin: 0.5rem;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        top: 50%;
+        left: 50%;
+      }
+      .app:hover {
+        background-color: rgb(226 232 240);
+        transition-property: all;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 150ms;
+        transition-duration: 200ms;
+      }
+    </style>
   </head>
   <body>
-    <p id="htk">loading ...</p>
+    <div id="root"></div>
 
     <!-- <script src="https://htk.vercel.app/api/htk" defer></script> -->
     <script>
-      fetch("https://htk.vercel.app/api")
-        .then((response) => response.json())
-        .then((data) => {
-          const htk = document.querySelector("#htk");
-          htk.textContent = `${data.text}  ${data.author}`;
-        })
-        .catch(console.error);
+      const app = document.querySelector("#root");
+      app.classList.add("app");
+      const htk = document.createElement("div");
+      app.appendChild(htk);
+      htk.onclick = fetchHTK;
+
+      function fetchHTK() {
+        htk.textContent = "🎉 Loading ...";
+        fetch("https://htk.vercel.app/api")
+          .then((response) => response.json())
+          .then((data) => {
+            htk.textContent = `${data.text} @${data.author}`;
+          })
+          .catch(console.error);
+      }
+      fetchHTK();
     </script>
   </body>
 </html>
