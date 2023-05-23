@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors";
-import { join } from "path";
-import { readFile } from "fs";
+import path from "path";
+import fs from "fs";
 
 const app = express();
 
@@ -16,8 +16,8 @@ app.use(cors());
 
 // json file
 app.get("/api/:id?", (req, res) => {
-  const filePath = join(__dirname, "assets", "quotes.json");
-  readFile(filePath, (err, data) => {
+  const filePath = path.join(__dirname, "assets", "quotes.json");
+  fs.readFile(filePath, (err, data) => {
     if (err) {
       console.error(err);
       res.status(500).send("Internal Server Error");
