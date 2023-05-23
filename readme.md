@@ -6,18 +6,23 @@
 
 - copy this snippets to your html
 
-```html
-<p id="htk"></p>
+```js
+const app = document.querySelector("#root");
+      app.classList.add("app");
+      const htk = document.createElement("div");
+      app.appendChild(htk);
+      htk.onclick = fetchHTK;
 
-<script>
-  fetch("https://htk.vercel.app/api")
-    .then((response) => response.json())
-    .then((data) => {
-      const htk = document.querySelector("#htk");
-      htk.innerText = `${data.text}  ${data.author}`;
-    })
-    .catch(console.error);
-</script>
+      function fetchHTK() {
+        htk.textContent = "🎉 Loading ...";
+        fetch("https://htk.vercel.app/api")
+          .then((response) => response.json())
+          .then((data) => {
+            htk.textContent = `${data.text} @${data.author}`;
+          })
+          .catch(console.error);
+      }
+      fetchHTK();
 ```
 
 <!-- - https://tangly1024.com/article/vercel-free-serverless-api -->
