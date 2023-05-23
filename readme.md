@@ -2,6 +2,10 @@
 
 <a href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Foeyoews%2Fhtk"><img src="https://vercel.com/button" alt="Deploy with Vercel"/></a>
 
+## Preview
+
+![htk](https://i.imgur.com/J8CePsp.png "htk")
+
 ## Usage
 
 - copy this snippets to your html
