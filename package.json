@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "main": "index.js",
   "author": "oeyoews <jyao4783@gmail.com>",
-  "type": "module",
   "license": "MIT",
   "scripts": {
     "start": "node api/index.js",
